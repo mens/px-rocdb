@@ -2,7 +2,7 @@
 <itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
 	<classes>
     <class id="MgtDomain" _delta="define">
-      <parent>cmdbAbstractObject></parent>
+      <parent>cmdbAbstractObject</parent>
       <properties>
         <category>bizomodel,searchable</category>
         <abstract>false</abstract>
@@ -89,9 +89,9 @@
         </field>
         <field id="mgt_domain" xsi:type="AttributeExternalField" _delta="define">
           <extkey_attcode>mgt_domain_id</extkey_attcode>
-          <target_attcode>friendlyname</target_attcode>
+          <target_attcode>name</target_attcode>
         </field>
-        <field id="is_managed" xsi:type="AttributeEnum">
+        <field id="is_managed" xsi:type="AttributeEnum" _delta="define">
           <sql>ismanaged</sql>
           <default_value>yes</default_value>
           <is_null_allowed>false</is_null_allowed>
@@ -100,7 +100,7 @@
             <value id='no'>no</value>
           </values>
         </field>
-        <field id="prov_state" xsi:type="AttributeString">
+        <field id="prov_state" xsi:type="AttributeString" _delta="define">
           <sql>provstate</sql>
           <default_value>NEW</default_value>
           <is_null_allowed>false</is_null_allowed>
@@ -199,3 +199,5 @@
         </list>
       </presentation>
     </class>
+  </classes>
+</itop_design>
