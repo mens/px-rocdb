@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
+	<classes>
+    <class id="MgtDomain" _delta="define">
+      <parent>cmdbAbstractObject></parent>
+      <properties>
+        <category>bizomodel,searchable</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>mgtdomain</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+      </properties>
+      <naming>
+        <attributes>
+          <attribute id="name"/>
+          <attribute id="description"/>
+        </attribute>
+      </naming>
+      <order>
+        <columns>
+          <column id="name" ascending="true"/>
+        </columns>
+      </order>
+      <reconciliation>
+        <attributes>
+          <attribute id="name"/>
+        </attributes>
+      </reconciliation>
+      <fields>
+        <field id="name" xsi:type="AttributeString">
+          <sql>name</sql>
+          <default_value/>
+          <is_null_allowed>false</is_null_allowed>
+          <validation_pattern>^MDA\d{9}$</validation_pattern>
+        </field>
+        <field id="description" xsi:type="AttributeString">
+          <sql>description</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+      </fields>
+      <methods/>
+      <presentation>
+        <details>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </details>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </search>
+        <list>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="FunctionalCI">
+      <fields>
+        <field id="rmsid" xsi:type="AttributeString" _delta="define">
+          <sql>rmsid</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="mgt_domain_id" xsi:type="AttributeExternalKey" _delta="define">
+          <sql>mgt_domain_id</sql>
+          <target_class>MgtDomain</target_class>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="mgt_domain" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>mgt_domain_id</extkey_attcode>
+          <target_attcode>friendlyname</target_attcode>
+        </field>
+        <field id="is_managed" xsi:type="AttributeEnum">
+          <sql>ismanaged</sql>
+          <default_value>yes</default_value>
+          <is_null_allowed>false</is_null_allowed>
+          <values>
+            <value id='yes'>yes</value>
+            <value id='no'>no</value>
+          </values>
+        </field>
+        <field id="prov_state" xsi:type="AttributeString">
+          <sql>provstate</sql>
+          <default_value>NEW</default_value>
+          <is_null_allowed>false</is_null_allowed>
+        </field>
+      </fields>
+      <presentation>
+        <details>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+            <item id="rmsid">
+              <rank>21</rank>
+            </item>
+            <item id="mgt_domain_id">
+              <rank>22</rank>
+            </item>
+            <item id="is_managed">
+              <rank>23></rank>
+            </item>
+            <item id="prov_state">
+              <rank>24</rank>
+            </item>
+            <item id="business_criticity">
+              <rank>30</rank>
+            </item>
+            <item id="move2production">
+              <rank>40</rank>
+            </item>
+            <item id="description">
+              <rank>50</rank>
+            </item>
+            <item id="contacts_list">
+              <rank>60</rank>
+            </item>
+            <item id="documents_list">
+              <rank>70</rank>
+            </item>
+            <item id="applicationsolution_list">
+              <rank>90</rank>
+            </item>
+            <item id="providercontracts_list">
+              <rank>100</rank>
+            </item>
+            <item id="services_list">
+              <rank>110</rank>
+            </item>
+          </items>
+        </details>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+            <item id="rmsid">
+              <rank>21</rank>
+            </item>
+            <item id="mgt_domain_id">
+              <rank>22</rank>
+            </item>
+            <item id="business_criticity">
+              <rank>30</rank>
+            </item>
+            <item id="move2production">
+              <rank>40</rank>
+            </item>
+          </items>
+        </search>
+        <list>
+          <items>
+            <item id="finalclass">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+            <item id="rmsid">
+              <rank>21</rank>
+            </item>
+            <item id="mgt_domain_id">
+              <rank>22</rank>
+            </item>
+            <item id="business_criticity">
+              <rank>30</rank>
+            </item>
+            <item id="move2production">
+              <rank>40</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    
