@@ -15,7 +15,7 @@
         <attributes>
           <attribute id="name"/>
           <attribute id="description"/>
-        </attribute>
+        </attributes>
       </naming>
       <order>
         <columns>
@@ -199,4 +199,3 @@
         </list>
       </presentation>
     </class>
-    
